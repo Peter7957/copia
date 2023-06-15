@@ -1,0 +1,94 @@
+{% extends '../Base.html' %}
+{% load static %}
+{% block css %}
+{% endblock %}
+{% block content %}
+<head>
+  <link rel="stylesheet" href="https://assets.btcdn.co/res/css/customer.css?1686327298">
+</head>
+<body cz-shortcut-listen="true">
+  <div id="wrapper">
+  
+    <div id="box" class="container">
+  <h2>Ingresa tus datos para crear tu cuenta</h2>
+
+  <p>En la próxima página podrás crear una contraseña.</p>
+
+  <div id="flash">
+  </div>
+
+  <div class="slider">
+    <form action="" method="post">
+      <fieldset>
+
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <!--
+        <p class="radios">
+          <label>Tipo de cuenta</label>
+
+          <label class="secondary">
+            <input checked="" value="person" onchange="return toggleUserType(this)" name="user-type" type="radio">
+            <span>Persona</span>
+          </label>
+
+          <label class="secondary">
+            <input value="company" onchange="return toggleUserType(this)" name="user-type" type="radio">
+            <span>Empresa</span>
+          </label>
+        </p>
+
+        <label for="user_name">Nombre <span id="required">(Requerido)</span></label>
+        <input required="" tabindex="1" placeholder="Ej: Nombre Apellidos" type="text" name="name" id="user_name" value="">
+
+        <label for="user_email">Email <span id="required">(Requerido)</span></label>
+        <input required="" tabindex="2" placeholder="Ej: usuario@gmail.com" type="email" name="email" id="user_email" value="">
+
+        <label for="user_phone_number">Teléfono <span id="required">(Requerido)</span></label>
+        <input required="" tabindex="3" placeholder="Ej: +569 **** ****" type="text" name="phone_number" id="user_phone_number" value="">
+
+        <div id="company-fields" style="display:none">
+          <label for="user_company_name">Nombre Empresa <span id="required">(Requerido)</span></label>
+          <input required="" disabled="" tabindex="4" type="text" name="company_name" id="user_company_name" value="">
+
+          <label for="user_company_id_number">RUT Empresa <span class="required">(Requerido)</span></label>
+          <input required="" disabled="" tabindex="5" type="text" name="company_id_number" id="user_company_id_number" value="">
+        </div>
+        -->
+
+        <p class="submit">
+          <input class="primary" type="submit" value="Registrarse" tabindex="6">
+          &nbsp;o <a href="{% url 'login' %}" style="margin: 10px 0 0 4px">Volver</a>
+        </p>
+      </fieldset>
+
+    </form>
+  </div><!-- /slider -->
+
+</div><!-- /container -->
+
+<script type="text/javascript">
+  window.toggleUserType = function(input) {
+    var div = document.getElementById('company-fields');
+    if (!div) return;
+
+    if (input.value == 'company') {
+      div.style.display = 'block';
+      document.getElementById('user_company_name').disabled = null;
+      document.getElementById('user_company_id_number').disabled = null;
+    } else {
+      div.style.display = 'none';
+      document.getElementById('user_company_name').disabled = true;
+      document.getElementById('user_company_id_number').disabled = true;
+    }
+  
+</script>
+  </div>
+</body
+</html>
+
+        
+
+    
+{% endblock content  %}

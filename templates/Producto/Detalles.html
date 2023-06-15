@@ -1,0 +1,28 @@
+{% extends '../Base.html' %}
+{% load static %}
+
+{% block content   %}
+    <table border>
+        <tr>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Marca</th>
+        <th>Precio</th>
+        <th>Imagen</th>
+        <th>Carrito</th>
+        <th>Comprar</th>
+        
+        </tr>
+        <tr>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.cantidad }}</td>
+            <td>{{ producto.marca }}</td>
+            <td>{{ producto.precio }}</td>
+            <td>
+                <img src="{{ producto.imagen.url }}" width="30px" height="30px">
+                
+            </td>
+        </tr>
+    </table>
+
+{% endblock  %}

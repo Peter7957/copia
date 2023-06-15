@@ -1,0 +1,17 @@
+{% extends '../Base.html' %}
+
+{% block content %}
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    
+        
+        {{ form }}
+
+        <input type="reset" value="Cancelar">
+        <input type="submit" value="Editar">
+
+    </form>
+    {{ mensaje }}
+
+{% endblock %}

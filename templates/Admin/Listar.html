@@ -1,0 +1,25 @@
+{% extends '../Base.html' %}
+
+{% block content %}
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Marca</th>
+            <th>Modificar</th>
+        </tr>
+        {% for prod in producto %}
+            <tr>
+           
+                <td>{{prod.nombre}}</td>
+                <td>{{prod.precio}}</td>
+                <td>{{prod.marca}}</td>
+                <td><a href="{% url 'modificar_producto' id=prod.id %}">modificar</a></td>
+                <td><a href="{% url 'eliminar_producto' id=prod.id %}">eliminar</a></td>
+            </tr>
+        {% endfor %}
+        
+    </table>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+<table border>
+    <!--titulo de mi tabla toda fea-->
+    <tr>
+    <th>Nombre</th>
+    <th>Precio</th>
+    <th>Cantidad</th>
+
+    
+    </tr>
+    <!-- lineas que se reperiran hasta que se aburra-->
+
+    {% if request.session.carrito.items %}
+        {% for key, value in request.session.carrito.items %}
+            <tr>
+                <td>{{ value.nombre }}</td>
+                <td>{{ value.precio }}</td>
+                <td>{{ value.cantidad }}</td>
+                <td>{{ value.acumulado }}
+                    <a href="{% url 'agregar_producto_carrito' value.producto_id %}">+</a>
+                    <a href="{% url 'restar_producto_carrito' value.producto_id %}">-</a>
+                </td>
+            </tr>
+        {% endfor %} 
+    {% else %}
+        <tr>
+            <td>
+                <h3>Sin productos</h3>
+            </td>
+        </tr>
+    {% endif %}
+        <tr>
+            <td>$ {{total_carrito}}</td>
+        </tr>
+</table>
+<hr>
+<div>
+    <a href="{% url 'limpiar_producto_carrito' %}">Limpiar</a>
+    <a href="#">Comprar</a>
+</div>

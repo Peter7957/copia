@@ -1,0 +1,25 @@
+header {
+    background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 70%);
+}
+#NavInicio a:hover {
+    background-color:rgba(41, 176, 214, 0.964);
+}
+.Nav2 a:hover {
+    background-color:rgba(41, 176, 214, 0.964);
+}
+#color {
+    color: rgb(195, 221, 227);
+    background-color: rgb(66, 152, 195);
+}
+#fondo1 {
+    background-color: rgb(16, 103, 157);
+}
+#fondo2 {
+    background-color: rgb(16, 103, 157);
+}
+#Nav3 a:hover {
+    background-color:rgba(41, 176, 214, 0.964);
+}
+.footer h4{
+    background-color: rgb(8, 98, 161);
+}
